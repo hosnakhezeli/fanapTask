@@ -1,0 +1,45 @@
+import axios from 'axios';
+
+const add = (values: SocialMediaListType): void => {
+    const isOneValueEmpty = values.id === '' || values.link === '' || values.type === '';
+    
+    if (!isOneValueEmpty) {
+      axios.post('http://localhost:3030/records', values)
+        .then(response => {
+          setSocialMediaList(prevList => [...prevList, response.data]);
+        })
+        .catch(error => {
+          console.error('There was an error!', error);
+        });
+    }
+  };
+  
+  const setEdit = (values: SocialMediaListType): void => {
+    if (currentSocialMedia) {
+      axios.put(`http://localhost:3030/records/${currentSocialMedia.id}`, values)
+        .then(response => {
+          const newSocialMediaList = [...socialMediaList];
+          const foundIndex = socialMediaList.findIndex((item) => item.id === currentSocialMedia.id);
+          newSocialMediaList[foundIndex] = response.data;
+          setSocialMediaList(newSocialMediaList);
+          setCurrentSocialMedia(null);
+        })
+        .catch(error => {
+          console.error('There was an error!', error);
+        });
+    }
+  };
+  
+  const setDelete = (): void => {
+    if (currentSocialMedia) {
+      axios.delete(`http://localhost:3030/records/${currentSocialMedia.id}`)
+        .then(() => {
+          const updatedList = socialMediaList.filter((item) => item.id !== currentSocialMedia.id);
+          setSocialMediaList(updatedList);
+          closeAlertBox();
+        })
+        .catch(error => {
+          console.error('There was an error!', error);
+        });
+    }
+  };

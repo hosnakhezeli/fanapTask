@@ -1,0 +1,57 @@
+.MuiBox-root.muirtl-qktu4z {
+    padding: 20px;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded {
+    background-color: #435B66;
+    margin-bottom: 20px;
+}
+
+.MuiCardHeader-content .MuiTypography-h5.MuiCardHeader-title {
+    color: white;
+    font-size: 16px;
+}
+.MuiInputBase-root div, .MuiInputBase-root .MuiInputBase-input {
+    color: white;
+}
+
+.MuiFormControl-root label {
+    color: #3b3d3d;
+}
+
+.MuiGrid-root .MuiSvgIcon-root {
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.MuiGrid-container .MuiGrid-root:nth-child(4) {
+    margin-right: 37%;
+}
+
+.MuiBreadcrumbs-ol .MuiBreadcrumbs-li a, .MuiBox-root p {
+    color: #fff;
+}
+
+.MuiBreadcrumbs-ol .MuiBreadcrumbs-li p {
+    color: rgb(148, 147, 147);
+}
+
+.MuiButtonBase-root.MuiButton-root p {
+    color: #ff9800;
+}
+.MuiCardActions-root .MuiButtonBase-root.MuiButton-root p {
+    color: #fff;
+}
+.MuiList-root.MuiList-padding {
+    background-color: #435B66;
+    border-radius: 5px;
+}
+
+.MuiBox-root .MuiGrid-root {
+    display: inline-block;
+}
+
+.MuiGrid-root.MuiGrid-container {
+    display: flex;
+    justify-content: space-between;
+}
